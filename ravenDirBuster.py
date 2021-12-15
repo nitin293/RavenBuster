@@ -95,8 +95,7 @@ if __name__ == '__main__':
         parser.add_argument(
             "-w", "--wordlist",
             type=str,
-            help="Set wordlist file",
-            default="./wordlists/medium.txt",
+            help="Set wordlist file [Default: ./wordlists/medium.txt]",
             required=False
         )
 
