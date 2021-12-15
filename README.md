@@ -10,11 +10,7 @@ This tools is developed by Nitin Choudhury, Founder and CEO of CyberRaven Securi
 ## Requirements
 This is a python based file. So, to run this file you will require a python environment.
 
-<<<<<<< HEAD
 ## Set-Up
-=======
-## Uses
->>>>>>> 70f48a118910bd241ac788c351b243d46a29971c
 Step-1: Download the zip file or clone
 
 `git clone https://github.com/nitin293/RavenDirBuster/`
@@ -26,7 +22,6 @@ cd RavenDirBuster/
 python3 ravenDirBuster.py --help
 ```
 
-<<<<<<< HEAD
 ![img](./assets/img-0.png)
 
 ## Uses
