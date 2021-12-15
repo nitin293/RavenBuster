@@ -21,6 +21,26 @@ import threading
 import argparse
 
 
+def banner():
+    poster = '''
+
+__________                           ________  .__      __________                __                
+\______   \_____ ___  __ ____   ____ \______ \ |__|_____\______   \__ __  _______/  |_  ___________ 
+ |       _/\__  \\\\  \/ // __ \ /    \ |    |  \|  \_  __ \    |  _/  |  \/  ___/\   __\/ __ \_  __ \\
+ |    |   \ / __ \\\\   /\  ___/|   |  \|    `   \  ||  | \/    |   \  |  /\___ \  |  | \  ___/|  | \/
+ |____|_  /(____  /\_/  \___  >___|  /_______  /__||__|  |______  /____//____  > |__|  \___  >__|   
+        \/      \/          \/     \/        \/                 \/           \/            \/      
+01010010 01100001 01110110 01100101 01101110 01000100 01101001 01110010 01000010 01110101 01110011 01110100 01100101 01110010 
+            
+                                                        DEVELOPED BY                                                                                                            
+                                                       Nitin Choudhury
+                                                     Founder @RavenCyber
+-------------------------------------------------------------------------------------------------------------------------------
+    
+    '''
+
+    print(poster)
+
 class Buster:
 
     def __init__(self, URL):
@@ -84,6 +104,8 @@ class Buster:
 if __name__ == '__main__':
 
     try:
+        banner()
+
         parser = argparse.ArgumentParser()
         parser.add_argument(
             "-u", "--url",
@@ -158,6 +180,9 @@ if __name__ == '__main__':
 
         if args.recursion and args.thread:
             print("Recursion and Thread can't run at the same time !")
+
+        elif args.recursion and args.extension:
+            print("Recursion and Extension can't run at the same time !")
 
         elif args.extension:
             buster.runExtension()
