@@ -56,6 +56,3 @@ python3 ravenDirBuster.py --help
 > can be run in multi-threaded mode
 
 ![img](./assets/img-4.png)
-=======
-![img](https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg)
->>>>>>> 70f48a118910bd241ac788c351b243d46a29971c
