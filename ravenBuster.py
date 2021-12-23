@@ -37,6 +37,7 @@ def banner():
                                          DEVELOPED BY                                                                                                            
                                         Nitin Choudhury
                                   Founder @RavenCyber Securities
+                                        Version: 0.0.3
 ---------------------------------------------------------------------------------------------------
     
     '''
@@ -154,6 +155,7 @@ if __name__ == '__main__':
             "-m", "--mode",
             type=str,
             help="Set buster mode [Directory: dir | Subdomain: sub]",
+            choices=['sub', 'dir'],
             required=True
         )
 
@@ -182,7 +184,7 @@ if __name__ == '__main__':
             "--recursion",
             type=bool,
             help="Set recursive mode: True/False [Default: False]",
-            required=False,
+            required=False
         )
 
         args = parser.parse_args()
@@ -225,9 +227,6 @@ if __name__ == '__main__':
 
         elif bustMode=='sub':
             buster.runNonRecursive(bustMode)
-
-        else:
-            print("[!] Invalid Buster Mode!")
 
 
     except KeyboardInterrupt:
