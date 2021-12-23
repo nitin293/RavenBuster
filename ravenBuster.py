@@ -10,7 +10,7 @@
     attack and your IP can be blocked by the cloud host.
 
 
-    This tools is developed by Nitin Choudhury, Founder and CEO of CyberRaven Securities.
+    This tools is developed by Nitin Choudhury, Founder and CEO @CyberRaven Securities.
 
     Thank You.
 
@@ -67,6 +67,10 @@ class Buster:
         except requests.exceptions.ConnectionError:
             pass
 
+        except KeyboardInterrupt:
+            pass
+
+
     def checkSUBDOMAIN(self, word):
         try:
             protocol = self.URL.split('://')[0]
@@ -79,6 +83,10 @@ class Buster:
 
         except requests.exceptions.ConnectionError:
             pass
+
+        except KeyboardInterrupt:
+            pass
+
 
     def runNonRecursive(self, bustMode):
         wordlist = open(self.wordfile).read().split('\n')
@@ -103,6 +111,7 @@ class Buster:
                 elif (wordID+1)%len(wordlist)==0:
                     t.join()
 
+
     def runRecursive(self, URL):
         wordlist = open(self.wordfile).read().split('\n')
 
@@ -114,6 +123,7 @@ class Buster:
             if response.status_code in self.status_codes:
                 print("URL:", url, "Status:", response.status_code)
                 self.runRecursive(url)
+
 
     def runExtension(self):
         wordlist = open(self.wordfile).read().split('\n')
@@ -183,7 +193,8 @@ if __name__ == '__main__':
         parser.add_argument(
             "--recursion",
             type=bool,
-            help="Set recursive mode: True/False [Default: False]",
+            help="Set recursive mode to True [Default: False]",
+            choices=['True'],
             required=False
         )
 
@@ -219,7 +230,7 @@ if __name__ == '__main__':
             if args.extension:
                 buster.runExtension()
 
-            elif args.recursion==True:
+            elif args.recursion:
                 buster.runRecursive(buster.URL)
 
             else:
@@ -233,4 +244,4 @@ if __name__ == '__main__':
         pass
 
     except requests.exceptions.ConnectionError:
-        print("[!] Check Your Internet Connectivity !")
+        print("[!] Check Your Connectivity !")
