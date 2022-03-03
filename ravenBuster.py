@@ -9,9 +9,6 @@
     Be careful using the tool in multi-threaded mode since it can be treated as DoS
     attack and your IP can be blocked by the cloud host.
 
-
-    This tools is developed by Nitin Choudhury, Founder and CEO @CyberRaven Securities.
-
     Thank You.
 
 """
@@ -36,8 +33,7 @@ def banner():
             
                                          DEVELOPED BY                                                                                                            
                                         Nitin Choudhury
-                                  Founder @RavenCyber Securities
-                                        Version: 0.0.3
+                                        Version: 0.1.0
 ---------------------------------------------------------------------------------------------------
     
     '''
