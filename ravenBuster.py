@@ -33,7 +33,7 @@ def banner():
             
                                          DEVELOPED BY                                                                                                            
                                         Nitin Choudhury
-                                        Version: 0.1.1
+                                        Version: 0.1.2
 ---------------------------------------------------------------------------------------------------
     
     '''
@@ -58,7 +58,7 @@ class Buster:
             response = requests.get(url)
 
             if response.status_code in self.status_codes:
-                print("URL:", url, "Status:", response.status_code)
+                print("URL:", url, "Status:", response.status_code, "Length:", len(response.content))
 
         except requests.exceptions.ConnectionError:
             pass
@@ -76,7 +76,7 @@ class Buster:
                 response = requests.get(url)
 
                 if response.status_code in self.status_codes:
-                    print("URL:", url, "Status:", response.status_code)
+                    print("URL:", url, "Status:", response.status_code, "Length:", len(response.content))
 
         except requests.exceptions.ConnectionError:
             pass
