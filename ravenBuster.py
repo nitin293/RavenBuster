@@ -59,7 +59,7 @@ class Buster:
                 response = requests.get(url)
 
                 if response.status_code in self.status_codes:
-                    print("URL:", url, "Status:", response.status_code, "Length:", len(response.content))
+                    print("Status:", response.status_code, "Length:", len(response.content), "URL:", url)
 
         except requests.exceptions.ConnectionError:
             pass
@@ -77,7 +77,7 @@ class Buster:
                 response = requests.get(url)
 
                 if response.status_code in self.status_codes:
-                    print("URL:", url, "Status:", response.status_code, "Length:", len(response.content))
+                    print("Status:", response.status_code, "Length:", len(response.content), "URL:", url)
 
         except requests.exceptions.ConnectionError:
             pass
