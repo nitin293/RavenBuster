@@ -33,7 +33,7 @@ def banner():
             
                                          DEVELOPED BY                                                                                                            
                                         Nitin Choudhury
-                                        Version: 0.1.0
+                                        Version: 0.1.1
 ---------------------------------------------------------------------------------------------------
     
     '''
@@ -69,13 +69,14 @@ class Buster:
 
     def checkSUBDOMAIN(self, word):
         try:
-            protocol = self.URL.split('://')[0]
-            url = '.'.join([word, self.URL.split('://')[1]])
-            url = '://'.join([protocol, url])
-            response = requests.get(url)
+            if word and not word.startswith('.'):
+                protocol = self.URL.split('://')[0]
+                url = '.'.join([word, self.URL.split('://')[1]])
+                url = '://'.join([protocol, url])
+                response = requests.get(url)
 
-            if response.status_code in self.status_codes:
-                print("URL:", url, "Status:", response.status_code)
+                if response.status_code in self.status_codes:
+                    print("URL:", url, "Status:", response.status_code)
 
         except requests.exceptions.ConnectionError:
             pass
