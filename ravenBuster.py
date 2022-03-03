@@ -190,7 +190,7 @@ if __name__ == '__main__':
             "--recursion",
             type=bool,
             help="Set recursive mode to True [Default: False]",
-            choices=['True'],
+            choices=[True],
             required=False
         )
 
