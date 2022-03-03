@@ -33,7 +33,7 @@ def banner():
             
                                          DEVELOPED BY                                                                                                            
                                         Nitin Choudhury
-                                        Version: 0.1.2
+                                        Version: 0.1.3
 ---------------------------------------------------------------------------------------------------
     
     '''
@@ -54,11 +54,12 @@ class Buster:
 
     def checkDIR(self, word):
         try:
-            url = '/'.join([self.URL, word])
-            response = requests.get(url)
+            if word:
+                url = '/'.join([self.URL, word])
+                response = requests.get(url)
 
-            if response.status_code in self.status_codes:
-                print("URL:", url, "Status:", response.status_code, "Length:", len(response.content))
+                if response.status_code in self.status_codes:
+                    print("URL:", url, "Status:", response.status_code, "Length:", len(response.content))
 
         except requests.exceptions.ConnectionError:
             pass
@@ -69,7 +70,7 @@ class Buster:
 
     def checkSUBDOMAIN(self, word):
         try:
-            if word and not word.startswith('.'):
+            if word:
                 protocol = self.URL.split('://')[0]
                 url = '.'.join([word, self.URL.split('://')[1]])
                 url = '://'.join([protocol, url])
